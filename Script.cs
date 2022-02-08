@@ -22,7 +22,7 @@ namespace CIRCUS_MES
 
         public void Save(string filePath)
         {
-            var writer = new BinaryWriter(File.Create(filePath));
+            using var writer = new BinaryWriter(File.Create(filePath));
 
             writer.Write(_jmpAddrList.Count);
 
